@@ -49,9 +49,12 @@ public class Analyzer {
 			case 0:
 				if (c == ' ' || c == '\t' || c == '\n' || c == '\r') {
 					state = 0;
-				}else if (this.isLetter(c) || c == '_' || this.isDigit(c)) {
+				}else if (this.isLetter(c) || c == '_') {
 					str.append(c);
                     state = 1;
+				}else if (this.isDigit(c)) {
+					str.append(c);
+                    state = 10;
 				}else if(c == '(' || c == ')' || c == '{' || c == '}'
 						|| c == ',' || c == ';') {
 					str.append(c);
@@ -162,6 +165,20 @@ public class Analyzer {
 				}else {
 					this.backChar();
                     tokens.add(new Token(str.toString(), Type.ASSIGNMENT_OPERATOR));
+                    str = new StringBuffer();
+                    state = 0;
+				}
+				break;
+			case 10:
+				if (this.isDigit(c)) {
+					str.append(c);
+					state = 10;
+				}else if(c == '.') {
+					str.append(c);
+					state = 2;
+				}else {
+					this.backChar();
+                    tokens.add(new Token(str.toString(), Type.INT));
                     str = new StringBuffer();
                     state = 0;
 				}

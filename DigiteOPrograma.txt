@@ -1,4 +1,2 @@
-main ( Programa ) {
- if ( 1.0 + 2.0 == 3) entao
- Var_01 = 4/2
-}$
+Seila eu te amo e nao e assim
+12a + 0;$
