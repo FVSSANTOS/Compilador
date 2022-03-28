@@ -9,6 +9,7 @@ public enum Type {
 	SPECIAL_CHARACTER("Caracter Especial"),
 	CHAR("Char"),
 	FLOAT("Float"),
+	INT("Inteiro"),
 	END_CODE("Fim do código"),
 	IDENTIFIER("Identificador");
 
