@@ -8,7 +8,7 @@ public class Program {
 
 	public static void main(String[] args) {
 
-		String path = "E:\\Eclipse\\lexical-analysis\\DigiteOPrograma.txt";
+		String path = "C:\\Users\\lucas\\Desktop\\testes\\Compilador\\DigiteOPrograma.txt";
 
 		try {
             String conteudoStr = new String(Files.readAllBytes(Paths.get(path)));

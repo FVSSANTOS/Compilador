@@ -135,7 +135,7 @@ public class Analyzer {
                     state = 5;
 				}else {
 					this.backChar();
-	                tokens.add(new Token(str.toString(), Type.SPECIAL_FLOAT));
+	                tokens.add(new Token(str.toString(), Type.FLOAT));
 	                str = new StringBuffer();
 	                state = 0;
 				}
@@ -205,6 +205,7 @@ public class Analyzer {
 	                str = new StringBuffer();
 	                state = 0;
 				}
+				break;
 			case 777:
 				tokens.add(new Token(str.toString(), Type.END_CODE)); 
 				break;
